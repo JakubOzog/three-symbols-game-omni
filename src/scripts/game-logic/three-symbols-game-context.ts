@@ -59,6 +59,11 @@ export class ThreeSymbolsGameContext {
             const random = Math.floor(Math.random() * GAME_CONFIG.availableSymbols.length);
             const randomSymbol = GAME_CONFIG.availableSymbols[random];
             currentSymbols.push(randomSymbol);
+            if (currentSymbols.length === 1 &&
+                Math.random() * 100 < GAME_CONFIG.bonusChanceForThreeSymbolsInPercent) {
+                currentSymbols.push(randomSymbol);
+                currentSymbols.push(randomSymbol);
+            }
             if (currentSymbols.length >= 3) {
                 return currentSymbols;
             }

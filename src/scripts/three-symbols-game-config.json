@@ -23,5 +23,6 @@
     {"x": 50, "y": 65, "rotation": 0},
     {"x": 75, "y": 60, "rotation": -0.2}
   ],
-  "animationStepDurationInSecond": 0.33
+  "animationStepDurationInSecond": 0.33,
+  "bonusChanceForThreeSymbolsInPercent": 10
 }

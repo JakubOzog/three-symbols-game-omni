@@ -9,5 +9,6 @@ export interface ThreeSymbolsGameConfigModel {
     symbolsPositionInPercent: [
         {"x": number, "y": number, "rotation": number},
     ],
-    animationStepDurationInSecond: number
+    animationStepDurationInSecond: number,
+    bonusChanceForThreeSymbolsInPercent: number,
 }
