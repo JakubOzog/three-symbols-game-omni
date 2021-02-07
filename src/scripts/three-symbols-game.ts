@@ -5,13 +5,7 @@ import {PrepareCardState} from "./game-logic/prepare-card.state";
 import {CountPointsState} from "./game-logic/count-points.state";
 import {ClearBoardState} from "./game-logic/clear-board.state";
 import {AnimationFinishEvent, GameBoard} from "./game-scene/game-board";
-import {ThreeSymbolsGameConfigModel} from "./three-symbols-game-config.model";
 
-/* TODO
-* - prepare configuration
-* - enum with assets
-* - json with prizes
-* */
 export class ThreeSymbolsGame {
     private gameBoard = new GameBoard(this.engine);
     private threeSymbolsGame = new ThreeSymbolsGameContext(this.gameBoard);
