@@ -1,0 +1,174 @@
+{
+	"frames": {
+		"crystal-1": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 130,
+				"h": 130
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 130,
+				"h": 130
+			},
+			"sourceSize": {
+				"w": 130,
+				"h": 130
+			}
+		},
+		"crystal-2": {
+			"frame": {
+				"x": 133,
+				"y": 1,
+				"w": 130,
+				"h": 133
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 130,
+				"h": 133
+			},
+			"sourceSize": {
+				"w": 130,
+				"h": 133
+			}
+		},
+		"crystal-3": {
+			"frame": {
+				"x": 1,
+				"y": 136,
+				"w": 135,
+				"h": 136
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 135,
+				"h": 136
+			},
+			"sourceSize": {
+				"w": 135,
+				"h": 136
+			}
+		},
+		"crystal-4": {
+			"frame": {
+				"x": 138,
+				"y": 136,
+				"w": 144,
+				"h": 139
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 144,
+				"h": 139
+			},
+			"sourceSize": {
+				"w": 144,
+				"h": 139
+			}
+		},
+		"crystal-5": {
+			"frame": {
+				"x": 284,
+				"y": 1,
+				"w": 135,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 135,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 135,
+				"h": 150
+			}
+		},
+		"crystal-6": {
+			"frame": {
+				"x": 284,
+				"y": 153,
+				"w": 109,
+				"h": 122
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 109,
+				"h": 122
+			},
+			"sourceSize": {
+				"w": 109,
+				"h": 122
+			}
+		},
+		"crystal-7": {
+			"frame": {
+				"x": 395,
+				"y": 153,
+				"w": 120,
+				"h": 131
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 120,
+				"h": 131
+			},
+			"sourceSize": {
+				"w": 120,
+				"h": 131
+			}
+		},
+		"crystal-8": {
+			"frame": {
+				"x": 1,
+				"y": 286,
+				"w": 146,
+				"h": 148
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 146,
+				"h": 148
+			},
+			"sourceSize": {
+				"w": 146,
+				"h": 148
+			}
+		}
+	},
+	"meta": {
+		"version": "1.0",
+		"image": "symbols-spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 516,
+			"h": 435
+		},
+		"scale": "1"
+	}
+}

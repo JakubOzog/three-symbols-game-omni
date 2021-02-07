@@ -1,0 +1,27 @@
+{
+  "availableSymbols": ["crystal-1", "crystal-2", "crystal-3", "crystal-4", "crystal-5", "crystal-6", "crystal-7", "crystal-8"],
+  "winingDataSet": [
+    {"symbols": ["crystal-1", "crystal-1", "crystal-1"], "prize": 100 },
+    {"symbols": ["crystal-2", "crystal-2", "crystal-2"], "prize": 100 },
+    {"symbols": ["crystal-3", "crystal-3", "crystal-3"], "prize": 100 },
+    {"symbols": ["crystal-4", "crystal-4", "crystal-4"], "prize": 100 },
+    {"symbols": ["crystal-5", "crystal-5", "crystal-5"], "prize": 100 },
+    {"symbols": ["crystal-6", "crystal-6", "crystal-6"], "prize": 100 },
+    {"symbols": ["crystal-7", "crystal-7", "crystal-7"], "prize": 100 },
+    {"symbols": ["crystal-8", "crystal-8", "crystal-8"], "prize": 100 },
+    {"symbols": ["crystal-1", "crystal-1"], "prize": 25 },
+    {"symbols": ["crystal-2", "crystal-2"], "prize": 25 },
+    {"symbols": ["crystal-3", "crystal-3"], "prize": 25 },
+    {"symbols": ["crystal-4", "crystal-4"], "prize": 25 },
+    {"symbols": ["crystal-5", "crystal-5"], "prize": 25 },
+    {"symbols": ["crystal-6", "crystal-6"], "prize": 25 },
+    {"symbols": ["crystal-7", "crystal-7"], "prize": 25 },
+    {"symbols": ["crystal-8", "crystal-8"], "prize": 25 }
+  ],
+  "symbolsPositionInPercent": [
+    {"x": 25, "y": 60, "rotation": 0.2},
+    {"x": 50, "y": 65, "rotation": 0},
+    {"x": 75, "y": 60, "rotation": -0.2}
+  ],
+  "animationStepDurationInSecond": 0.33
+}
