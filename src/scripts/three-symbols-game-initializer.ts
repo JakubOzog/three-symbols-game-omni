@@ -1,6 +1,10 @@
 import {Engine} from "./game-engine/engine";
 import {EngineParams} from "./game-engine/engine-params.if";
 import {ThreeSymbolsGame} from "./three-symbols-game";
+import gsap from "gsap";
+import {PixiPlugin} from "gsap/PixiPlugin";
+import {MotionPathPlugin} from "gsap/MotionPathPlugin";
+import {RoughEase} from "gsap/EasePack";
 
 window.onload = load;
 
@@ -14,6 +18,7 @@ export class ThreeSymbolsGameInitializer {
     constructor() {
         this.initPixiJs();
         this.loadAssets();
+        gsap.registerPlugin(PixiPlugin, MotionPathPlugin, RoughEase);
     }
 
     private initPixiJs(): void {
@@ -30,6 +35,8 @@ export class ThreeSymbolsGameInitializer {
 
     private loadAssets(): void {
         this.engine.loader.add('images/texture', '../../images/texture.png');
+        this.engine.loader.add('images/chest-closed', '../../images/chest-closed.png');
+        this.engine.loader.add('images/chest-open', '../../images/chest-open.png');
         this.engine.loader.add('images/tiles', '../../images/tiles.png');
         this.engine.loader.add('numbers-spritesheet', '../../images/numbers-spritesheet.json');
         this.engine.loader.add('symbols-spritesheet', '../../images/symbols-spritesheet.json');

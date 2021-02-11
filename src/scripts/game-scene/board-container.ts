@@ -36,6 +36,11 @@ export class BoardContainer extends PIXI.Container {
         sprite.x = x * texture.width;
         sprite.y = y * texture.width;
         this.addChild(sprite);
-        gsap.to(sprite, {alpha: 1, duration: GAME_CONFIG.animationStepDurationInSecond, delay: 0.05 * (x + y), onComplete: onFinish});
+        gsap.to(sprite, {
+            alpha: 1,
+            duration: GAME_CONFIG.animationStepDurationInSecond,
+            delay: 0.05 * (x + y),
+            onComplete: onFinish
+        });
     }
 }

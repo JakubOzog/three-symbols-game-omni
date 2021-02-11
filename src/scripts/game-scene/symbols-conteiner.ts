@@ -16,11 +16,8 @@ export class SymbolsContainer extends PIXI.Container {
 
     public loadCards(symbolsName: string[], onFinish: () => void): void {
         this.onFinish = onFinish;
-        GAME_CONFIG.symbolsPositionInPercent.forEach((cardConf, index) => {
-            this.cards[index] = new CardContainer(symbolsName[index],this.onCardReady.bind(this));
-            this.cards[index].x = this.boardWidth * (cardConf.x / 100);
-            this.cards[index].y = this.boardHeight * (cardConf.y / 100);
-            this.cards[index].rotation = cardConf.rotation;
+        symbolsName.forEach((symbol, index) => {
+            this.cards[index] = new CardContainer(index, symbol,this.onCardReady.bind(this));
             this.addChild(this.cards[index]);
         });
     }

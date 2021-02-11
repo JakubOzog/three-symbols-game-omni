@@ -18,11 +18,25 @@
     {"symbols": ["crystal-7", "crystal-7"], "prize": 25 },
     {"symbols": ["crystal-8", "crystal-8"], "prize": 25 }
   ],
-  "symbolsPositionInPercent": [
-    {"x": 25, "y": 60, "rotation": 0.2},
-    {"x": 50, "y": 65, "rotation": 0},
-    {"x": 75, "y": 60, "rotation": -0.2}
-  ],
   "animationStepDurationInSecond": 0.33,
-  "bonusChanceForThreeSymbolsInPercent": 10
+  "bonusChanceForThreeSymbolsInPercent": 10,
+  "animations": {
+    "symbolPathPatterns": [
+      [{"x":0,"y":0},{"x":0,"y":-150},{"x":50,"y":-75},{"x":50,"y":125}],
+      [{"x":0,"y":0},{"x":0,"y":-150},{"x":-50,"y":-75},{"x":-50,"y":125}]
+    ],
+    "chests": [{
+      "start": {"x": 800, "y": 450},
+      "end": {"x": 50, "y": 150},
+      "path": "M 800 450 C 450 0 50 -150 50 150"
+    }, {
+      "start": {"x": 800, "y": 450},
+        "end": {"x": 300, "y": 100},
+      "path": "M 800 450 C 570 0 300 -150 300 100"
+    } ,{
+      "start": {"x": 800, "y": 450},
+      "end": {"x": 550, "y": 150},
+      "path": "M 800 450 C 700 0 500 -150 550 150"
+    }]
+  }
 }

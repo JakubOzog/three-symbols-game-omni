@@ -6,9 +6,7 @@ export interface ThreeSymbolsGameConfigModel {
         symbols: string[],
         prize: number
     }[],
-    symbolsPositionInPercent: [
-        {"x": number, "y": number, "rotation": number},
-    ],
+    animations: any,
     animationStepDurationInSecond: number,
     bonusChanceForThreeSymbolsInPercent: number,
 }
