@@ -6,9 +6,12 @@ import {Point} from "pixi.js";
 // TODO callbackScope: this,
 export class CardContainer extends PIXI.Container {
 
-    private card = PIXI.Sprite.from('images/chest-closed');
+    private card = new PIXI.Container();
+    private cardChest = PIXI.Sprite.from('images/chest-closed');
+    private cardBg = PIXI.Sprite.from('images/chest-bg');
     private symbol!: PIXI.Sprite;
     public isSymbolShown = false;
+    private isTremblingPossible = false;
 
     constructor(private index: number, private symbolName: string, private onReady: () => void) {
         super();
@@ -17,12 +20,21 @@ export class CardContainer extends PIXI.Container {
         this.cardIn();
     }
 
+    public cardTrembling(): void {
+        if (this.isTremblingPossible) {
+            gsap.fromTo(this.cardChest, 0.01, {x:-2}, {x:2, clearProps:"x", repeat:20})
+            gsap.fromTo(this.cardChest, 0.01, {y:-2}, {y:2, clearProps:"y", repeat:20})
+        }
+    }
+
     private prepareCard(): void {
         this.card.alpha = 0;
         this.card.interactive = true;
         this.card.x = GAME_CONFIG.animations.chests[this.index].start.x;
         this.card.y = GAME_CONFIG.animations.chests[this.index].start.y;
         this.addChild(this.card);
+        this.card.addChild(this.cardBg);
+        this.card.addChild(this.cardChest);
     }
 
     private cardIn(): void {
@@ -35,13 +47,15 @@ export class CardContainer extends PIXI.Container {
                 this.card.alpha = 1;
             },
             onComplete: () => {
-                this.card.once('pointerdown', this.handleCardClick.bind(this))
+                this.isTremblingPossible = true;
+                this.card.once('pointerdown', this.handleCardClick.bind(this));
             }
         });
     }
 
     private handleCardClick(): void {
-        this.card.texture = PIXI.Texture.from('images/chest-open');
+        this.isTremblingPossible = false;
+        this.cardChest.texture = PIXI.Texture.from('images/chest-open');
 
         const cartCenter: {"x": number,"y": number} = {
             x: this.card.x + (this.card.width / 2),
@@ -50,8 +64,10 @@ export class CardContainer extends PIXI.Container {
 
         this.symbol = PIXI.Sprite.from(this.symbolName);
         this.symbol.alpha = 1;
-        this.symbol.x = cartCenter.x - (this.symbol.width / 2);
-        this.symbol.y = cartCenter.y - (this.symbol.height / 2);
+        this.symbol.x = cartCenter.x;
+        this.symbol.y = cartCenter.y;
+        this.symbol.scale = new Point(.85, .85);
+        this.symbol.anchor.set(0.5);
         this.addChild(this.symbol);
 
         gsap.to(this.symbol, {

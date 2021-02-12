@@ -29,9 +29,16 @@ export class PointsContainer extends PIXI.Container {
         this.pointsAnimation.alpha = 1;
 
         const phaseTime = GAME_CONFIG.animationStepDurationInSecond;
-        gsap.to(this.pointsAnimation.scale, {repeat: 1, yoyo: true, x: 1.5, y: 1.5, duration: phaseTime, ease: "power2.out"});
-        gsap.to(this.pointsAnimation, {x: this.getAnimationTargetX(), y: 20, duration: phaseTime * 2, ease: "power2.out"});
-        gsap.to(this.pointsAnimation, {alpha: 0, duration: phaseTime, delay: phaseTime, onComplete: onFinish});
+        if (points === 0) {
+            this.pointsAnimation.x -= 15;
+            gsap.to(this.pointsAnimation, {alpha: 0, duration: phaseTime, delay: phaseTime, onComplete: onFinish});
+            gsap.to(this.pointsAnimation, {y: -this.pointsAnimation.height, duration: phaseTime * 3, ease: "easeInQuart"});
+            gsap.to(this.pointsAnimation, {x: this.pointsAnimation.x + 30, yoyo: true, repeat: 2, duration: phaseTime / 2});
+        } else {
+            gsap.to(this.pointsAnimation.scale, {repeat: 1, yoyo: true, x: 1.5, y: 1.5, duration: phaseTime, ease: "easeInQuart"});
+            gsap.to(this.pointsAnimation, {x: this.getAnimationTargetX(), y: 20, duration: phaseTime * 2, ease: "easeInQuart"});
+            gsap.to(this.pointsAnimation, {alpha: 0, duration: phaseTime, delay: phaseTime, onComplete: onFinish});
+        }
     }
 
     private getAnimationTargetX(): number {

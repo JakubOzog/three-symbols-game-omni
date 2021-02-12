@@ -21,22 +21,40 @@
   "animationStepDurationInSecond": 0.33,
   "bonusChanceForThreeSymbolsInPercent": 10,
   "animations": {
+    "chestTremblingFrequency": 30,
     "symbolPathPatterns": [
       [{"x":0,"y":0},{"x":0,"y":-150},{"x":50,"y":-75},{"x":50,"y":125}],
       [{"x":0,"y":0},{"x":0,"y":-150},{"x":-50,"y":-75},{"x":-50,"y":125}]
     ],
-    "chests": [{
-      "start": {"x": 800, "y": 450},
-      "end": {"x": 50, "y": 150},
-      "path": "M 800 450 C 450 0 50 -150 50 150"
-    }, {
-      "start": {"x": 800, "y": 450},
-        "end": {"x": 300, "y": 100},
-      "path": "M 800 450 C 570 0 300 -150 300 100"
-    } ,{
-      "start": {"x": 800, "y": 450},
-      "end": {"x": 550, "y": 150},
-      "path": "M 800 450 C 700 0 500 -150 550 150"
-    }]
+    "chests": [
+      {
+        "start": {"x": 800, "y": 450},
+        "end": {"x": 50, "y": 150},
+        "path": "M 800 450 C 450 0 50 -150 50 150"
+      }, {
+        "start": {"x": 800, "y": 450},
+          "end": {"x": 300, "y": 100},
+        "path": "M 800 450 C 570 0 300 -150 300 100"
+      } ,{
+        "start": {"x": 800, "y": 450},
+        "end": {"x": 550, "y": 150},
+        "path": "M 800 450 C 700 0 500 -150 550 150"
+      }
+    ],
+    "background": {
+      "frequency": 8,
+      "horizonLine": 370,
+      "time": {
+        "duration": 2,
+        "deviation": 2
+      },
+      "range": {
+        "distance": 200,
+        "deviation": 10
+      },
+      "sprites": [
+        "bag.png", "coins.png", "diamond.png", "goldbars.png", "ring.png"
+      ]
+    }
   }
 }

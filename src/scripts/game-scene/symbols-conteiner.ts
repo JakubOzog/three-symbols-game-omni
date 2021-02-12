@@ -14,6 +14,14 @@ export class SymbolsContainer extends PIXI.Container {
         super();
     }
 
+    public onEnterFrame(): void {
+        if (this.cards.length > 0 &&
+            Math.floor(Math.random() * GAME_CONFIG.animations.chestTremblingFrequency) === 0) {
+            const cardIndex = Math.floor(Math.random() * this.cards.length);
+            this.cards[cardIndex].cardTrembling();
+        }
+    }
+
     public loadCards(symbolsName: string[], onFinish: () => void): void {
         this.onFinish = onFinish;
         symbolsName.forEach((symbol, index) => {

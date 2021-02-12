@@ -37,9 +37,11 @@ export class ThreeSymbolsGameInitializer {
         this.engine.loader.add('images/texture', '../../images/texture.png');
         this.engine.loader.add('images/chest-closed', '../../images/chest-closed.png');
         this.engine.loader.add('images/chest-open', '../../images/chest-open.png');
+        this.engine.loader.add('images/chest-bg', '../../images/chest-bg.png');
         this.engine.loader.add('images/tiles', '../../images/tiles.png');
         this.engine.loader.add('numbers-spritesheet', '../../images/numbers-spritesheet.json');
         this.engine.loader.add('symbols-spritesheet', '../../images/symbols-spritesheet.json');
+        this.engine.loader.add('spritesheet-treasures', '../../images/spritesheet-treasures.json');
 
         this.engine.loader.load(this.runThreeSymbolsGame.bind(this));
     }

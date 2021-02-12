@@ -6,7 +6,12 @@ export interface ThreeSymbolsGameConfigModel {
         symbols: string[],
         prize: number
     }[],
-    animations: any,
     animationStepDurationInSecond: number,
     bonusChanceForThreeSymbolsInPercent: number,
+    animations: {
+        chestTremblingFrequency: number,
+        symbolPathPatterns: [],
+        chests: [],
+        background: {},
+    },
 }

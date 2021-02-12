@@ -25,6 +25,11 @@ export class GameBoard {
         engine.stage.addChild(this.board);
         engine.stage.addChild(this.symbols);
         engine.stage.addChild(this.points);
+
+        this.engine.ticker.add(() => {
+            this.board.onEnterFrame();
+            this.symbols.onEnterFrame();
+        });
     }
 
     public drawBoard(): void {
