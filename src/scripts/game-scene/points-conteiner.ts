@@ -1,11 +1,13 @@
 import * as PIXI from 'pixi.js'
 import gsap from "gsap";
 import {GAME_CONFIG} from "../three-symbols-game-config.model";
+import {ParticlesFirecracker} from "./particles-firecracker";
 
 export class PointsContainer extends PIXI.Container {
 
     private pointsAnimation = new PIXI.Container();
     private currentPoints = new PIXI.Container();
+    private particlesFirecracker = new PIXI.Container();
 
     constructor(private boardWidth: number,
                 private boardHeight: number) {
@@ -14,6 +16,7 @@ export class PointsContainer extends PIXI.Container {
         this.currentPoints.y = 20;
         this.addChild(this.currentPoints);
         this.addChild(this.pointsAnimation);
+        this.addChild(this.particlesFirecracker);
     }
 
     public showCurrentPoints(points: number): void {
@@ -39,6 +42,22 @@ export class PointsContainer extends PIXI.Container {
             gsap.to(this.pointsAnimation, {x: this.getAnimationTargetX(), y: 20, duration: phaseTime * 2, ease: "easeInQuart"});
             gsap.to(this.pointsAnimation, {alpha: 0, duration: phaseTime, delay: phaseTime, onComplete: onFinish});
         }
+    }
+
+    public smallFirecracker(): void {
+        new ParticlesFirecracker(this.particlesFirecracker, 'small');
+        new ParticlesFirecracker(this.particlesFirecracker, 'small');
+        new ParticlesFirecracker(this.particlesFirecracker, 'small');
+        new ParticlesFirecracker(this.particlesFirecracker, 'small');
+    }
+
+    public largeFirecracker(): void {
+        new ParticlesFirecracker(this.particlesFirecracker, 'large');
+        new ParticlesFirecracker(this.particlesFirecracker, 'large');
+        new ParticlesFirecracker(this.particlesFirecracker, 'large');
+        new ParticlesFirecracker(this.particlesFirecracker, 'large');
+        new ParticlesFirecracker(this.particlesFirecracker, 'large');
+        new ParticlesFirecracker(this.particlesFirecracker, 'large');
     }
 
     private getAnimationTargetX(): number {

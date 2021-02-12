@@ -1,7 +1,6 @@
 import * as PIXI from 'pixi.js'
 import gsap from "gsap";
 import {GAME_CONFIG} from "../three-symbols-game-config.model";
-import add = PIXI.groupD8.add;
 
 export class BoardContainer extends PIXI.Container {
 

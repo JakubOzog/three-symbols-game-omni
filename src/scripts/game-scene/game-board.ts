@@ -41,6 +41,12 @@ export class GameBoard {
     }
 
     public animateObtainedPoints(points: number): void {
+        if (points > 0 && points < 100) {
+            this.points.smallFirecracker();
+        }
+        if (points >= 100) {
+            this.points.largeFirecracker();
+        }
         this.points.animateObtainedPoints(points, () => this.onAnimationFinish.emit(AnimationFinishEvent.POINTS_SET))
     }
 

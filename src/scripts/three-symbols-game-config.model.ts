@@ -11,7 +11,7 @@ export interface ThreeSymbolsGameConfigModel {
     animations: {
         chestTremblingFrequency: number,
         symbolPathPatterns: [],
-        chests: [],
-        background: {},
+        chests: any[],
+        background: any,
     },
 }

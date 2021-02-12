@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "gsap": "^3.6.0",
+    "pixi-particles": "^4.3.0",
     "pixi.js": "^5.3.7",
     "signal-js": "^2.4.0"
   }
