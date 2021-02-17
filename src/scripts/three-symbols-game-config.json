@@ -58,7 +58,7 @@
     }
   },
   "conditions": {
-    "chargePerGame": 5,
+    "chargePerGame": 10,
     "feedAmount": 25,
     "notEnoughPointsForGameInformation": "You don't have enough points for game.\nYou need to feed your account.\nBy click you will deposit 25 credits."
   }
