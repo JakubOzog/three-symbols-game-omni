@@ -19,7 +19,7 @@
     {"symbols": ["crystal-8", "crystal-8"], "prize": 25 }
   ],
   "animationStepDurationInSecond": 0.33,
-  "bonusChanceForThreeSymbolsInPercent": 5,
+  "bonusChanceForThreeSymbolsInPercent": 10,
   "animations": {
     "chestTremblingFrequency": 30,
     "symbolPathPatterns": [
