@@ -43,6 +43,7 @@ export class ThreeSymbolsGameInitializer {
         this.engine.loader.add('numbers-spritesheet', '../../images/numbers-spritesheet.json');
         this.engine.loader.add('symbols-spritesheet', '../../images/symbols-spritesheet.json');
         this.engine.loader.add('spritesheet-treasures', '../../images/spritesheet-treasures.json');
+        this.engine.loader.add('desyrel', '../../images/desyrel.xml');
 
         this.engine.loader.load(this.runThreeSymbolsGame.bind(this));
     }

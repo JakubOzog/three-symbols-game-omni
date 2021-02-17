@@ -9,6 +9,6 @@ export class PrepareGameBoardState implements GameStateIf {
     public drawBoard(): void {
         this.context.gameBoard.drawBoard();
         const points = this.context.getCurrentPoints();
-        return this.context.gameBoard.showCurrentPoints(points);
+        this.context.gameBoard.showCurrentPoints(points);
     }
 }

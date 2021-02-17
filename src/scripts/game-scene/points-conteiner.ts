@@ -8,6 +8,7 @@ export class PointsContainer extends PIXI.Container {
     private pointsAnimation = new PIXI.Container();
     private currentPoints = new PIXI.Container();
     private particlesFirecracker = new PIXI.Container();
+    private information = new PIXI.Container();
 
     constructor(private boardWidth: number,
                 private boardHeight: number) {
@@ -17,11 +18,44 @@ export class PointsContainer extends PIXI.Container {
         this.addChild(this.currentPoints);
         this.addChild(this.pointsAnimation);
         this.addChild(this.particlesFirecracker);
+        this.addChild(this.information);
+    }
+
+    public showChargeScreen(): void {
+        if(this.information.children.length === 0) {
+            const bitmapFontText = new PIXI.BitmapText(
+                GAME_CONFIG.conditions.notEnoughPointsForGameInformation,
+                { fontName: 'Desyrel', fontSize: 40, align: 'center'}
+                );
+            bitmapFontText.anchor = 0.5;
+
+            this.information.addChild(bitmapFontText);
+            this.information.x = this.boardWidth / 2;
+            this.information.y = this.boardHeight / 2;
+        }
+        const phaseTime = GAME_CONFIG.animationStepDurationInSecond;
+        gsap.fromTo(this.information.scale, {x: 0, y: 0}, {x: 1, y: 1, duration: phaseTime*2, ease: "back.out(1.7)"});
+    }
+
+    public hideChargeScreen(onFinish: () => void): void {
+        const phaseTime = GAME_CONFIG.animationStepDurationInSecond;
+        gsap.fromTo(this.information.scale, {x: 1, y: 1}, {x: 0, y: 0, duration: phaseTime*2, ease: "back.in(1.7)", onComplete: onFinish});
     }
 
     public showCurrentPoints(points: number): void {
         this.clearContainerChildren(this.currentPoints);
         this.drawNumberToContainer(this.currentPoints, points);
+    }
+
+    public subtractPoints(points: number): void {
+        this.clearContainerChildren(this.pointsAnimation);
+        this.drawNumberToContainer(this.pointsAnimation, points);
+        const phaseTime = GAME_CONFIG.animationStepDurationInSecond;
+
+        gsap.fromTo(this.pointsAnimation,
+            {alpha: 1, x: this.getAnimationTargetX(), y: 20},
+            {alpha: 0, x: this.getAnimationTargetX(), y: 100, duration: phaseTime * 2});
+
     }
 
     public animateObtainedPoints(points: number, onFinish: () => void): void {

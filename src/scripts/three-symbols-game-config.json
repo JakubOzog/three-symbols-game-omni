@@ -19,7 +19,7 @@
     {"symbols": ["crystal-8", "crystal-8"], "prize": 25 }
   ],
   "animationStepDurationInSecond": 0.33,
-  "bonusChanceForThreeSymbolsInPercent": 10,
+  "bonusChanceForThreeSymbolsInPercent": 5,
   "animations": {
     "chestTremblingFrequency": 30,
     "symbolPathPatterns": [
@@ -56,5 +56,10 @@
         "bag.png", "coins.png", "diamond.png", "goldbars.png", "ring.png"
       ]
     }
+  },
+  "conditions": {
+    "chargePerGame": 5,
+    "feedAmount": 25,
+    "notEnoughPointsForGameInformation": "You don't have enough points for game.\nYou need to feed your account.\nBy click you will deposit 25 credits."
   }
 }

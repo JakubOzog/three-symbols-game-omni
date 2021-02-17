@@ -22,6 +22,19 @@ export class ThreeSymbolsGameContext {
         this._gameState = value;
     }
 
+    public hasCreditsForGame(): boolean {
+        return this.points - GAME_CONFIG.conditions.chargePerGame >= 0;
+    }
+
+    public feedAmountToPoints(): void {
+        this.points += GAME_CONFIG.conditions.feedAmount;
+    }
+
+    public chargeAccountForGame(): number {
+        this.points -= GAME_CONFIG.conditions.chargePerGame;
+        return GAME_CONFIG.conditions.chargePerGame;
+    }
+
     public checkWinedPoints(): number {
         const passedSets = GAME_CONFIG.winingDataSet.filter((set) => {
             if (this.currentSymbols) {

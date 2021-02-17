@@ -9,5 +9,7 @@ export interface GameStateIf {
 
     countPoints?(): void;
 
-    clearBoard?(): void;
+    endOfPoints?(): void;
+
+    showChargeScreen?(): void;
 }

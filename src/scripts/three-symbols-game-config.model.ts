@@ -14,4 +14,9 @@ export interface ThreeSymbolsGameConfigModel {
         chests: any[],
         background: any,
     },
+    conditions: {
+        chargePerGame: number,
+        feedAmount: number,
+        notEnoughPointsForGameInformation: string,
+    }
 }

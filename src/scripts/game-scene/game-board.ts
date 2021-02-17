@@ -9,6 +9,7 @@ export enum AnimationFinishEvent {
     CARD_UNCOVERED = 'CARD_UNCOVERED',
     POINTS_SET = 'POINTS_SET',
     BOARD_CLEANED = 'BOARD_CLEANED',
+    FEED_CREDITS = 'FEED_CREDITS',
 }
 
 export class GameBoard {
@@ -40,6 +41,14 @@ export class GameBoard {
         this.symbols.loadCards(symbols,() => this.onAnimationFinish.emit(AnimationFinishEvent.CARD_UNCOVERED))
     }
 
+    public showChargeScreen(): void {
+        this.points.showChargeScreen();
+    }
+
+    public hideChargeScreen(): void {
+        this.points.hideChargeScreen(() => this.onAnimationFinish.emit(AnimationFinishEvent.FEED_CREDITS));
+    }
+
     public animateObtainedPoints(points: number): void {
         if (points > 0 && points < 100) {
             this.points.smallFirecracker();
@@ -51,10 +60,22 @@ export class GameBoard {
     }
 
     public showCurrentPoints(points: number): void {
-        this.points.showCurrentPoints(points)
+        this.points.showCurrentPoints(points);
+    }
+
+    public subtractPoints(points: number): void {
+        this.points.subtractPoints(points);
     }
 
     public clearBoard(): void {
         this.symbols.removeSymbolsFromBoard(() => this.onAnimationFinish.emit(AnimationFinishEvent.BOARD_CLEANED))
+    }
+
+    public onStageClick(callBack: () => void): void {
+        this.engine.stage.interactive = true;
+        this.engine.stage.once('pointerdown', () => {
+            this.engine.stage.interactive = false;
+            callBack();
+        });
     }
 }
